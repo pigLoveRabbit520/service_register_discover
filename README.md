@@ -6,5 +6,5 @@
 
 # 说明
 * 服务提供者用node编写，连接zk集群，监听服务节点添加，删除
-* 请求http://localhost:8080/services,header中service_name设为service_php（或node_service），api_name设为/（即具体请求地址）
+* 请求 http://localhost:8080/services header中service_name设为service_php（或node_service），api_name设为/（即具体请求地址）
 * zookeeper是强一致性，其实并不适合做服务的注册中心
