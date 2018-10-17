@@ -1,17 +1,21 @@
 version: '3'
 services:
-    service_1:
-        image: java_service_1
-        restart: always
+    service_php:
+        image: salamandermh/php-cli:7.1
         ports:
             - 8080
+        volumes:
+            - ./php/src:/var/www
+            - ./php/php.ini:/usr/local/etc/php/php.ini
         environment:
-            SERVICE_NAME: service_1
-
-    service_2:
-        image: php_service_2
-        restart: always
+            SERVICE_NAME: service_php
+        command: ["php", "/var/www/start.php", "start"]
+    service_node:
+        image: node:8.12
         ports:
             - 80
+        volumes:
+            - ./node:/usr/src/app
         environment:
-            SERVICE_80_NAME: service_2
+            SERVICE_NAME: service_node
+        command: ["node", "/usr/src/app/app.js"]
