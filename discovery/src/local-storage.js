@@ -2,7 +2,7 @@
 //去除String限制
 "use strict";
 
-var db;
+let db;
 
 function LocalStorage() {}
 db = LocalStorage;
